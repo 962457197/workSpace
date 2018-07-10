@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<pre id="aa"></pre>
+<pre id="bb"></pre>
+
+</body>
+<script language="javascript">
+//var s="今天天气怎么样$dshakdhkadbjda$0加大恒大华府$hahahahahah$1"
+var s = [{'china':'我是你爸爸我是你爸爸我是你爸爸我是你爸爸我是你爸爸我是你爸爸我是你爸爸我是你爸爸我是你爸爸我是你爸爸我是你爸爸我是你爸爸我是你爸爸我是你爸爸我是你爸爸我是你爸爸我是你爸爸我是你爸爸','english':'dasdasd'},
+	{'china':'发射点犯得上发生','english':'sfasdas'},
+	{'china':'大苏打实打实打算','english':'qwertyuio'},
+	{'china':'撒打发打发打发撒','english':'dfsdfsdfdsfds'}];
+
+function getData(event){
+	s.push(event);
+}
+
+var data = [];
+
+var index = 0,index2 = 0;
+function type(){
+    document.getElementById("aa").innerText = data.china.substring(0,index++);
+   	document.getElementById("bb").innerText = data.english.substring(0,index2++);
+}
+
+function getStringLength(string){
+	return	string.length;
+}
+
+function 动画(callback){
+	console.log("动画");
+	setTimeout(function(){
+		callback();
+	},2000);	
+}
+
+function action(n){
+	index = 0;
+	index2 = 0;
+	data = s[n];
+	var wa = setInterval(type, 500);
+	if(n+1 < s.length){
+		setTimeout(function(){
+			clearInterval(wa);
+			动画(function(){action(n+1);});
+		},Math.max(getStringLength(data.china),getStringLength(data.english))*500);	
+	
+	}
+	
+}
+
+action(0);
+
+</script>
+</html>

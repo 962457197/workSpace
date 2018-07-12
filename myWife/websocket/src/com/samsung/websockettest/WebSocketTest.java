@@ -29,13 +29,13 @@ public class WebSocketTest {
     	JSONObject jsonObject2=new JSONObject();
     	for(i=0;i<=2;i++) {
     		if(i==0){
-    			chinese="今天天气怎么样";
+    			chinese="今天天气怎么样啊大大萨达萨达萨达打撒打撒打撒打撒打撒今天天气怎么样啊大大萨达萨达萨达打撒打撒打撒打撒打撒今天天气怎么样啊大大萨达萨达萨达打撒打撒打撒打撒打撒";
     			english="what is today weather";
     			}else if(i==1) {
-    				chinese="你今天吃饭了吗";
+    				chinese="你今天吃饭了吗你今天吃饭了吗你今天吃饭了吗你今天吃饭了吗你今天吃饭了吗你今天吃饭了吗你今天吃饭了吗你今天吃饭了吗你今天吃饭了吗你今天吃饭了吗";
         			english="what do you eat today";
     			}else if(i==2) {
-    				chinese="你好吗";
+    				chinese="你好吗你好吗你好吗你好吗你好吗你好吗你好吗你好吗你好吗你好吗你好吗你好吗你好吗你好吗你好吗你好吗你好吗";
         			english="how are you";
     			}
     	

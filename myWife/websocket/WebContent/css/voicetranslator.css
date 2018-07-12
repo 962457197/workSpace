@@ -1,0 +1,88 @@
+#board{
+	position:relative;
+	height:100px;
+	background:#000;
+	z-index:2;
+}
+.scrollup{
+	color:#82a9e4;
+	font-size:50px;
+	position:absolute;
+	animation:mymove 1s infinite;
+	-webkit-animation:mymove 1s infinite;
+	animation-fill-mode:forwards;
+	animation-iteration-count:1;
+	z-index:1;
+}
+@-webkit-keyframes mymove{
+	0%{top:503px;}
+	70%{top:50px;}
+	100%{top:100px;font-size:45px;color:#425876;}
+}
+
+
+.resetposition{
+	color:#82a9e4;
+	font-size:50px;
+	position:absolute;
+	animation:reset 0s infinite;
+	-webkit-animation:reset 0s infinite;
+	animation-fill-mode:forwards;
+	animation-iteration-count:1;
+	z-index:1;
+}
+@-webkit-keyframes reset{
+	top:503px;
+}
+
+
+.scrollupEg{
+	color:#fff;
+	font-size:36px;
+	position:absolute;
+	animation:mymoveEg 1s infinite;
+	-webkit-animation:mymoveEg 1s infinite;
+	animation-fill-mode:forwards;
+	animation-iteration-count:1;
+	z-index:1;
+}
+@-webkit-keyframes mymoveEg{
+	0%{top:570px;}
+	70%{top:117px;}
+	100%{top:167px;font-size:36px;color:#fff;}
+}
+
+#message{
+	color:#fff;
+}
+body{
+	background-color:#000;
+}
+#chinese li{
+	list-style:none;
+	position:absolute;
+	left:300px;
+	color:#82a9e4;
+	font-size:50px;
+	font-family:"Ë¼Ô´ºÚÌå";
+	font-weight:bold;
+}
+#eg li{
+	list-style:none;
+	position:absolute;
+	left:300px;
+	color:#eeeeee;
+	font-size:36px;
+	font-family:"Regular";
+}
+html{
+	overflow-x:hidden;
+}
+
+
+
+
+
+
+
+

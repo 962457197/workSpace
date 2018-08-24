@@ -58,7 +58,7 @@
 body{
 	background-color:#000;
 }
-#chinese li{
+#chinese {
 	list-style:none;
 	position:absolute;
 	left:300px;
@@ -67,10 +67,11 @@ body{
 	font-family:"Ë¼Ô´ºÚÌå";
 	font-weight:bold;
 }
-#eg li{
+#eg {
 	list-style:none;
 	position:absolute;
 	left:300px;
+	margin-top:300px;
 	color:#eeeeee;
 	font-size:36px;
 	font-family:"Regular";

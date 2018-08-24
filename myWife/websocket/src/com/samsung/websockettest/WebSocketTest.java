@@ -24,24 +24,33 @@ public class WebSocketTest {
     public void onOpen(Session session) throws IOException, InterruptedException {
     	String chinese=null;
     	String english=null;
+    	String islast=null;
     	int i;
     	JSONObject jsonObject=new JSONObject();
     	JSONObject jsonObject2=new JSONObject();
-    	for(i=0;i<=2;i++) {
+    	for(i=0;i<=3;i++) {
     		if(i==0){
-    			chinese="今天天气怎么样啊大大萨达萨达萨达打撒打撒打撒打撒打撒今天天气怎么样啊大大萨达萨达萨达打撒打撒打撒打撒打撒今天天气怎么样啊大大萨达萨达萨达打撒打撒打撒打撒打撒";
+    			chinese="今天";
     			english="what is today weather";
+    			islast="false";
     			}else if(i==1) {
-    				chinese="你今天吃饭了吗你今天吃饭了吗你今天吃饭了吗你今天吃饭了吗你今天吃饭了吗你今天吃饭了吗你今天吃饭了吗你今天吃饭了吗你今天吃饭了吗你今天吃饭了吗";
+    				chinese="今天的天气怎么样";
         			english="what do you eat today";
+        			islast="true";
     			}else if(i==2) {
-    				chinese="你好吗你好吗你好吗你好吗你好吗你好吗你好吗你好吗你好吗你好吗你好吗你好吗你好吗你好吗你好吗你好吗你好吗";
+    				chinese="你叫什";
         			english="how are you";
+        			islast="false";
+    			}else if(i==3) {
+    				chinese="你叫什么名字";
+        			english="how are you";
+        			islast="true";
     			}
     	
     		jsonObject.put("id",i);
     		jsonObject.put("chinese",chinese);
     		jsonObject.put("english",english);
+    		jsonObject.put("islast", islast);
     		onMessage(jsonObject.toString(),session);
     		jsonObject=new JSONObject();
     		//Thread.sleep(1000);

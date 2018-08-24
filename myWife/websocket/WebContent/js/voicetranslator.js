@@ -20,12 +20,12 @@ var eg=[];    //英文
 			var data = JSON.parse(event.data);
 			s.push(data);
 			//eg.push(data.english);
-			console.log(data);
+			//console.log(data);
 			
 			if(s.length > 1)
 				return false;
 			ani();
-			console.log(s.length);
+			//console.log(s.length);
 		}
 		
 		
@@ -34,13 +34,24 @@ var eg=[];    //英文
 			var index = 0,index2 = 0;
 			//var chinese=data.chinese;
 			//var english=data.english;
-			$('#chinese').append("<li id='message' style='width:1000px;top:503px;'></li>");
-			$('#eg').append("<li id='english' style='width:1000px;top:570px;'></li>");
-			$('#chinese').append("<li id='message2' style='width:1000px;top:100px;font-size:45px;color:#425876'></li>");
-			$('#eg').append("<li id='english2' style='width:1000px;top:167px;font-size:36px;color:#fff'></li>");
+			$('#chinese').append("<li id='message' style='top:503px;'></li>");
+			$('#eg').append("<li id='english' style='top:570px;'></li>");
+			$('#chinese').append("<li id='message2' style='top:100px;font-size:45px;color:#425876'></li>");
+			$('#eg').append("<li id='english2' style='top:167px;font-size:36px;color:#fff'></li>");
+			var textHeight = 66;
+			
 			function type(){
-			    document.getElementById("message").innerText = s[0].chinese.substring(0,index++);
-			   	document.getElementById("english").innerText = s[0].english.substring(0,index2+=3);
+			    document.getElementById("message").innerText = s[0].chinese;
+			   	document.getElementById("english").innerText = s[0].english;
+			   	$("#message").animate({
+					   top:503-$('#message').height()+textHeight
+				   },500);
+				setTimeout(function(){
+					 $("#message").css("top",503-$('#message').height()+textHeight);
+				},500);	
+				   
+				  
+			   	
 			}
 
 			function getStringLength(string){
@@ -49,18 +60,18 @@ var eg=[];    //英文
 
 			function animote(callback){
 				var lastStr = s.shift();
-				console.log("lastone",lastStr);
-				console.log("animation...........");
+				//console.log("lastone",lastStr);
+				//console.log("animation...........");
 				move(lastStr);
-				setTimeout(function(){
+				
 					document.getElementById("message").innerText ="";
 				   	document.getElementById("english").innerText ="";
-					$("#message").attr("class","resetposition");
-					$("#english").attr("class","resetposition");
+//					$("#message").attr("class","resetposition");
+//					$("#english").attr("class","resetposition");
 					document.getElementById("message2").innerText =lastStr.chinese;
 				   	document.getElementById("english2").innerText =lastStr.english;
 					callback();
-				},1000);	
+					
 			}
 			function action(){
 				
@@ -74,7 +85,7 @@ var eg=[];    //英文
 			   	
 				index = 0;
 				index2 = 0;
-				console.log("gangning",s.length);
+				//console.log("gangning",s.length);
 				data = s[0];
 				var wa = setInterval(type, 500);
 				setTimeout(function(){
@@ -82,7 +93,7 @@ var eg=[];    //英文
 					animote(function(){
 						s.length > 0 ?action():false;
 						});	
-				},Math.max(getStringLength(data.chinese),getStringLength(data.english)/3)*500+500);	
+				},100);	
 				
 				
 			}
@@ -92,9 +103,22 @@ var eg=[];    //英文
 					document.getElementById("message2").innerText ="";
 				   	document.getElementById("english2").innerText ="";
 				},400);	
-				
-				$("#message").attr("class","scrollup");
-				$("#english").attr("class","scrollupEg");
+				$("#message").animate({
+					   top:50
+				   },700,function(){
+					   $("#message").animate({
+						   top:100
+					   },300)
+				   });
+//				$("#english").animate({
+//					   top:117+$('#message').height()-textHeight
+//				   },700,function(){
+//					   $("#english").animate({
+//						   top:167+$('#message').height()-textHeight
+//					   },300)
+//				   });
+//				$("#message").attr("class","scrollup");
+//				$("#english").attr("class","scrollupEg");
 			}
 
 			action(0);	

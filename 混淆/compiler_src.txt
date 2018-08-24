@@ -1,0 +1,17 @@
+java -jar closure-compiler-v20180716.jar --js src\project.js --js_output_file new_src\project.js
+
+java -jar closure-compiler-v20180716.jar --js src\assets\Script\CommonFrame\GlobalInit.js --js_output_file new_src\assets\Script\CommonFrame\GlobalInit.js
+
+java -jar closure-compiler-v20180716.jar --js src\assets\Script\game\ball_node.js --js_output_file new_src\assets\Script\game\ball_node.js
+java -jar closure-compiler-v20180716.jar --js src\assets\Script\game\boss_node.js --js_output_file new_src\assets\Script\game\boss_node.js
+java -jar closure-compiler-v20180716.jar --js src\assets\Script\game\bullet_node.js --js_output_file new_src\assets\Script\game\bullet_node.js
+java -jar closure-compiler-v20180716.jar --js src\assets\Script\game\gameManager.js --js_output_file new_src\assets\Script\game\gameManager.js
+java -jar closure-compiler-v20180716.jar --js src\assets\Script\game\gun_node.js --js_output_file new_src\assets\Script\game\gun_node.js
+java -jar closure-compiler-v20180716.jar --js src\assets\Script\game\hero_node.js --js_output_file new_src\assets\Script\game\hero_node.js
+java -jar closure-compiler-v20180716.jar --js src\assets\Script\game\map_node.js --js_output_file new_src\assets\Script\game\map_node.js
+java -jar closure-compiler-v20180716.jar --js src\assets\Script\game\monster_node.js --js_output_file new_src\assets\Script\game\monster_node.js
+
+java -jar closure-compiler-v20180716.jar --js src\assets\Script\hall\game_enum.js --js_output_file new_src\assets\Script\hall\game_enum.js
+java -jar closure-compiler-v20180716.jar --js src\assets\Script\hall\game_util.js --js_output_file new_src\assets\Script\hall\game_util.js
+
+java -jar closure-compiler-v20180716.jar --js src\assets\Script\welfare\popstar_proxy.js --js_output_file new_src\assets\Script\welfare\popstar_proxy.js

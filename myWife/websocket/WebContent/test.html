@@ -5,56 +5,56 @@
 <title>Insert title here</title>
 </head>
 <body>
-<pre id="aa"></pre>
-<pre id="bb"></pre>
+<div id="roll" class="roll">
+    11111111111111111111111
+    222222222222222222222222
+    33333333333333333333333
+    44444444444444444444444
+    55555555555555555555555
+</div>
 
 </body>
 <script language="javascript">
-//var s="今天天气怎么样$dshakdhkadbjda$0加大恒大华府$hahahahahah$1"
-var s = [{'china':'我是你爸爸我是你爸爸我是你爸爸我是你爸爸我是你爸爸我是你爸爸我是你爸爸我是你爸爸我是你爸爸我是你爸爸我是你爸爸我是你爸爸我是你爸爸我是你爸爸我是你爸爸我是你爸爸我是你爸爸我是你爸爸','english':'dasdasd'},
-	{'china':'发射点犯得上发生','english':'sfasdas'},
-	{'china':'大苏打实打实打算','english':'qwertyuio'},
-	{'china':'撒打发打发打发撒','english':'dfsdfsdfdsfds'}];
-
-function getData(event){
-	s.push(event);
+var roll=document.getElementById("roll");
+var div=roll.innerHTML;
+setcss=function (_this,css) {
+    if(!_this||_this.nodeType===3||_this.nodeType===8||!_this.style){
+        return;
+    }
+    for(var i in css){
+        _this.style[i]=css[i];
+    }
+    return _this;
 }
 
-var data = [];
-
-var index = 0,index2 = 0;
-function type(){
-    document.getElementById("aa").innerText = data.china.substring(0,index++);
-   	document.getElementById("bb").innerText = data.english.substring(0,index2++);
+roll.innerHTML="<div id='rr'>"+div+"</div>";
+setcss(roll,{
+    "position":"relative",
+    "overflow":"hidden",
+    "width":"100px",
+    "height":"100px",
+    "color":"red",
+})
+var timeroll=document.getElementById("rr");
+var h=timeroll.offsetHeight;
+Timeroll=function () {
+   var h=timeroll.offsetHeight;
+   var t=parseInt(timeroll.style.top,10);
+   var tt=h>Math.abs(t)||t>=0?t-10:(h||0);
+   setcss(timeroll,{
+       "top":tt+"px"
+   })
+    setTimeout(Timeroll,200);
 }
 
-function getStringLength(string){
-	return	string.length;
-}
 
-function 动画(callback){
-	console.log("动画");
-	setTimeout(function(){
-		callback();
-	},2000);	
+if(h>100){
+    Timeroll();
+    setcss(timeroll,{
+        "position":"relative",
+        "top":"0px",
+    })
 }
-
-function action(n){
-	index = 0;
-	index2 = 0;
-	data = s[n];
-	var wa = setInterval(type, 500);
-	if(n+1 < s.length){
-		setTimeout(function(){
-			clearInterval(wa);
-			动画(function(){action(n+1);});
-		},Math.max(getStringLength(data.china),getStringLength(data.english))*500);	
-	
-	}
-	
-}
-
-action(0);
 
 </script>
 </html>

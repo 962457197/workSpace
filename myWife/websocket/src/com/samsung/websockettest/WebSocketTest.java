@@ -28,21 +28,21 @@ public class WebSocketTest {
     	int i;
     	JSONObject jsonObject=new JSONObject();
     	JSONObject jsonObject2=new JSONObject();
-    	for(i=0;i<=3;i++) {
-    		if(i==0){
-    			chinese="今天";
+    	for(i=0;i<=16;i++) {
+    		if(i%4==0){
+    			chinese="这是一段错误";
     			english="what is today weather";
     			islast="false";
-    			}else if(i==1) {
-    				chinese="今天的天气怎么样";
-        			english="what do you eat today";
+    			}else if(i%4==1) {
+    				chinese="这是第一句正确的话"+i+",";
+        			english="what do you eat today"+i;
         			islast="true";
-    			}else if(i==2) {
-    				chinese="你叫什";
+    			}else if(i%4==2) {
+    				chinese="这是第2段错误";
         			english="how are you";
         			islast="false";
-    			}else if(i==3) {
-    				chinese="你叫什么名字";
+    			}else if(i%4==3) {
+    				chinese="这是第2句正确的话"+i+",";
         			english="how are you";
         			islast="true";
     			}

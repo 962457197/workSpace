@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="http://apps.bdimg.com/libs/jquery/1.11.1/jquery.min.js"></script>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+
+$.post("https://dev-openapi.dmhmusic.com/OPENAPI/openApiLogin.json", { q_source: "lIdKAFMQxgNJM", zone: "CN" } );
+
+/* function post(URL, PARAMS) {
+	  var temp = document.createElement("form");
+	  temp.action = URL;
+	  temp.method = "post";
+	  temp.style.display = "none";
+	  for (var x in PARAMS) {
+	    var opt = document.createElement("textarea");
+	    opt.name = x;
+	    opt.value = PARAMS[x];
+	    // alert(opt.name)
+	    temp.appendChild(opt);
+	  }
+	  document.body.appendChild(temp);
+	  temp.submit();
+	  return temp;
+	}
+post('https://dev-openapi.dmhmusic.com/OPENAPI/openApiLogin.json', {q_source:'lIdKAFMQxgNJM',zone:'CN'}); */
+</script>
+</html>

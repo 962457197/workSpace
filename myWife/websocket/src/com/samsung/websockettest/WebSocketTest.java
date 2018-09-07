@@ -31,11 +31,11 @@ public class WebSocketTest {
     	for(i=0;i<=16;i++) {
     		if(i%4==0){
     			chinese="这是一段错误";
-    			english="what is today weather";
+    			english="what is today gg";
     			islast="false";
     			}else if(i%4==1) {
     				chinese="这是第一句正确的话"+i+",";
-        			english="what do you eat today"+i;
+        			english="what do you eat todaygg"+i;
         			islast="true";
     			}else if(i%4==2) {
     				chinese="这是第2段错误";

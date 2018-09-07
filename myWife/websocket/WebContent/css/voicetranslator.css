@@ -64,7 +64,7 @@ body{
 	left:300px;
 	color:#82a9e4;
 	font-size:50px;
-	font-family:"思源黑体";
+	font-family:"思源黑体 CN";
 	font-weight:bold;
 }
 #eg {
@@ -74,7 +74,7 @@ body{
 	margin-top:300px;
 	color:#eeeeee;
 	font-size:36px;
-	font-family:"Regular";
+	font-family:"思源黑体 CN";
 }
 html{
 	overflow-x:hidden;
